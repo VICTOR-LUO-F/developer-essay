@@ -2,17 +2,17 @@
 
 今年，苹果应用全面推行 https 协议的 app api，虽然并非强制，可以通过设置例外依然使用 http 协议，但是毕竟是大势所趋，全面强制推行势在必行。所以，在前期刚刚开发上线的 Rails 网站上，使用了 ssl 证书。当一切设置好后，发现 chrome 浏览器地址栏没有出现期待的绿色小锁，而是一个叹号，如下图所示：
 
-![Rails on Ruby 欢迎页面](./images/anquan-1.png)
+![Rails on Ruby 欢迎页面](../../raw/master/images/anquan-1.png)
 
 点击叹号后，如果是 mac 版的 chrome 浏览器，并没有更加详细的说明（也许是版本问题），只是提示当前 ssl 链接不安全。
 
 改用平板上安装的 android 版 chrome 浏览器后，点击叹号会出现如下说明信息：
 
-![Rails on Ruby 欢迎页面](./images/anquan-2.png)
+![Rails on Ruby 欢迎页面](../../raw/master/images/anquan-2.png)
 
 继续点击「详细信息」，可以看到如下内容：
 
-![Rails on Ruby 欢迎页面](./images/anquan-3.png)
+![Rails on Ruby 欢迎页面](../../raw/master/images/anquan-3.png)
 
 这个黄色的锁后面的内容已经可以说明问题了，出现叹号的原因是：网页中引用了非 http:// 地址的资源的资源。正好当前的网页是静态网页，里面引用了几个存储的阿里云 oss 上的图片，地址的模式是：
 
@@ -23,7 +23,7 @@
 > https://bucket.oss....
 
 再刷新网页，可以看到地址栏前面出现的期望的绿锁，如下图：
-![Rails on Ruby 欢迎页面](./images/anquan-4.png)
+![Rails on Ruby 欢迎页面](../../raw/master/images/anquan-4.png)
 
 点击绿锁，可以看到第二条信息前面的黄锁已经变成了绿色，如下图：
-![Rails on Ruby 欢迎页面](./images/anquan-5.png)
+![Rails on Ruby 欢迎页面](../../raw/master/images/anquan-5.png)
